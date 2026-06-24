@@ -9,7 +9,7 @@ export default function Home() {
           Welcome to Django + Next.js
         </Heading>
         <Text fontSize="lg" color="gray.600">
-          Styled exclusively with Chakra UI v2. Strictly no Tailwind!
+          Styled with Chakra UI v2.
         </Text>
       </VStack>
     </Box>
