@@ -1,0 +1,305 @@
+<#
+================================================================================
+PROJECT OVERVIEW & TECH STACK
+================================================================================
+This script initializes a modern, full-stack web application with the following 
+technology choices:
+
+Backend:
+- Django (Python): A robust, high-level framework for rapid backend development.
+- Django REST Framework: For building flexible and powerful Web APIs.
+- PostgreSQL: An advanced, open-source relational database system.
+
+Frontend:
+- Next.js (TypeScript): React framework utilizing the modern App Router.
+- Chakra UI v2 & Emotion: Accessible, modular, and customizable component library.
+- Framer Motion: Production-ready animation library for React.
+
+================================================================================
+TARGET FILE STRUCTURE
+================================================================================
+my-fullstack-project/           <-- Root project folder
+│
+├── backend/                    <-- DJANGO (Python)
+│   ├── venv/                   <-- Virtual environment (ignored in git)
+│   ├── manage.py              
+│   ├── requirements.txt        <-- Python dependencies
+│   ├── core/                   <-- Django project settings
+│   │   ├── settings.py
+│   │   └── urls.py
+│   └── api/                    <-- Your Django app
+│       ├── models.py           <-- Database tables
+│       ├── views.py            <-- Business logic / Endpoints
+│       ├── urls.py             <-- API routes
+│       └── serializers.py      <-- Converts Python data to JSON
+│
+└── frontend/                   <-- NEXT.JS (JavaScript/TypeScript)
+    ├── package.json            <-- Node dependencies
+    ├── node_modules/           <-- Installed JS packages (ignored in git)
+    ├── .env.local              <-- Frontend environment variables (e.g., NEXT_PUBLIC_API_URL)
+    ├── public/                 <-- Static assets (images, favicons)
+    └── src/
+        ├── app/                <-- Next.js App Router (pages, layouts)
+        │   ├── page.tsx
+        │   └── layout.tsx
+        ├── components/         <-- Reusable React components (buttons, navbars)
+        └── lib/                <-- Utility functions or API fetching logic
+
+================================================================================
+HOW TO RUN THIS PROJECT IN VS CODE
+================================================================================
+Both Next.js and Django development servers feature automatic "hot-reloading".
+Whenever you save a file in VS Code, Next.js will instantly update the browser 
+without needing a manual refresh, and Django will auto-restart the backend.
+
+1. Open VS Code and open your root project folder.
+2. Open the integrated terminal (View > Terminal or Ctrl+`).
+3. Click the "Split Terminal" icon (or press Ctrl+Shift+5).
+
+TERMINAL 1: Start the Backend
+-----------------------------
+> cd backend
+> .\venv\Scripts\Activate.ps1
+> python manage.py runserver
+
+TERMINAL 2: Start the Frontend
+------------------------------
+> cd frontend
+> npm run dev
+================================================================================
+#>
+
+# Exit immediately if a critical command fails
+$ErrorActionPreference = "Stop"
+
+Write-Host "🚀 Starting full-stack project initialization..." -ForegroundColor Cyan
+
+# ==========================================
+# 1. Determine Project Name & Installation Path
+# ==========================================
+$projectName = Read-Host "📛 Enter your project name (Press Enter to use 'my-fullstack-project')"
+if ([string]::IsNullOrWhiteSpace($projectName)) {
+    $projectName = "my-fullstack-project"
+}
+
+$basePath = Read-Host "📁 Enter the directory path to install the project (Press Enter for current folder)"
+if ([string]::IsNullOrWhiteSpace($basePath)) {
+    $basePath = "."
+}
+
+$projectPath = Join-Path -Path $basePath -ChildPath $projectName
+Write-Host "Creating project at: $projectPath" -ForegroundColor Yellow
+
+New-Item -ItemType Directory -Path $projectPath -Force | Out-Null
+Set-Location -Path $projectPath
+
+# ==========================================
+# 2. Setup Django Backend (with PostgreSQL)
+# ==========================================
+Write-Host "🐍 Setting up the Django backend..." -ForegroundColor Green
+mkdir backend | Out-Null
+cd backend
+
+# Create and activate virtual environment
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+# Install dependencies
+Write-Host "📦 Installing Python dependencies..."
+pip install django djangorestframework django-cors-headers psycopg2-binary python-dotenv
+
+# Initialize Django project and app
+Write-Host "🏗️ Building Django project 'core' and app 'api'..."
+django-admin startproject core .
+python manage.py startapp api
+
+# Create missing files
+New-Item -ItemType File -Path "api\urls.py" -Force | Out-Null
+New-Item -ItemType File -Path "api\serializers.py" -Force | Out-Null
+New-Item -ItemType File -Path ".env" -Force | Out-Null  # For PostgreSQL credentials
+pip freeze > requirements.txt
+
+# Return to root directory
+cd ..
+
+# ==========================================
+# 3. Setup Next.js Frontend
+# ==========================================
+Write-Host "⚛️ Setting up the Next.js frontend..." -ForegroundColor Blue
+npx create-next-app@latest frontend `
+  --typescript `
+  --no-tailwind `
+  --eslint `
+  --app `
+  --src-dir `
+  --import-alias "@/*" `
+  --use-npm `
+  --yes
+
+# Apply final frontend touches & install Chakra v2 / Framer
+Write-Host "✨ Installing Chakra UI v2..." -ForegroundColor Yellow
+cd frontend
+
+# Install UI Libraries targeting Chakra UI version 2 AND next-js cache provider
+npm install @chakra-ui/react@2 @emotion/react @emotion/styled framer-motion @chakra-ui/next-js
+
+# --- WEBPACK WORKAROUND FOR CHAKRA v2 ---
+# Using native npm pkg set instead of PowerShell regex to avoid BOM encoding corruption
+Write-Host "🔧 Disabling Turbopack in package.json to prevent Emotion hydration errors..." -ForegroundColor Gray
+npm pkg set scripts.dev="next dev --webpack"
+npm pkg set scripts.build="next build --webpack"
+
+# Create missing structure folders and files
+mkdir src\components -Force | Out-Null
+mkdir src\lib -Force | Out-Null
+New-Item -ItemType File -Path ".env.local" -Force | Out-Null
+
+# --- CHAKRA UI CONFIGURATION & CLEANUP ---
+
+# 1. Create the Client-Side Provider for Chakra UI
+Write-Host "🔧 Creating Chakra UI Providers component..." -ForegroundColor Gray
+@'
+"use client";
+import { CacheProvider } from "@chakra-ui/next-js";
+import { ChakraProvider } from "@chakra-ui/react";
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <CacheProvider>
+      <ChakraProvider>{children}</ChakraProvider>
+    </CacheProvider>
+  );
+}
+'@ | Out-File -FilePath "src\app\providers.tsx" -Encoding utf8
+
+# 2. Overwrite layout.tsx to implement the Provider and suppress HTML hydration warnings
+Write-Host "🔧 Updating layout.tsx to wrap application..." -ForegroundColor Gray
+@'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Providers } from "./providers";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "My Fullstack App",
+  description: "Generated by Next.js and Django",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+'@ | Out-File -FilePath "src\app\layout.tsx" -Encoding utf8
+
+# 3. Purge Default Next.js CSS and implement Pure Chakra UI landing page
+Write-Host "🧹 Removing Next.js default styles and setting up Chakra UI landing page..." -ForegroundColor Gray
+
+# Empty globals.css completely so Next.js resets don't interfere with Chakra
+"" | Out-File -FilePath "src\app\globals.css" -Encoding utf8
+
+# Remove CSS Modules if they were generated
+if (Test-Path "src\app\page.module.css") {
+    Remove-Item -Force "src\app\page.module.css"
+}
+
+# Overwrite page.tsx with purely Chakra UI components
+@'
+"use client";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+
+export default function Home() {
+  return (
+    <Box as="main" minH="100vh" display="flex" alignItems="center" justifyContent="center" bg="gray.50">
+      <VStack spacing={4}>
+        <Heading as="h1" size="2xl" color="blue.600">
+          Welcome to Django + Next.js
+        </Heading>
+        <Text fontSize="lg" color="gray.600">
+          Styled with Chakra UI v2.
+        </Text>
+      </VStack>
+    </Box>
+  );
+}
+'@ | Out-File -FilePath "src\app\page.tsx" -Encoding utf8
+
+
+# Return to root directory
+cd ..
+
+# ==========================================
+# 4. Git & GitHub Setup
+# ==========================================
+Write-Host "🌿 Initializing Git repository..." -ForegroundColor Cyan
+
+# Remove the nested .git folder that Next.js automatically creates
+if (Test-Path "frontend\.git") {
+    Remove-Item -Recurse -Force "frontend\.git"
+}
+
+# Create a master .gitignore for the root directory
+@"
+# Python / Django
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+"@ | Out-File -FilePath .gitignore -Encoding utf8
+
+# Initialize Git and make the first commit
+git init
+git add .
+git commit -m "Initial commit: Scaffolded Django (PostgreSQL) and Next.js (Chakra UI v2) full-stack architecture"
+
+# Ask for GitHub URL
+$githubUrl = Read-Host "🐙 Enter your empty GitHub repository URL to push the code (Press Enter to skip)"
+
+if (-not [string]::IsNullOrWhiteSpace($githubUrl)) {
+    Write-Host "Pushing to GitHub..." -ForegroundColor Green
+    git branch -M main
+    git remote add origin $githubUrl
+    git push -u origin main
+    Write-Host "✅ Successfully pushed to GitHub!" -ForegroundColor Cyan
+} else {
+    Write-Host "⏭️ Skipped pushing to GitHub. You can always do this later." -ForegroundColor Yellow
+}
+
+# ==========================================
+# 5. Success Message & Run Instructions
+# ==========================================
+Write-Host "`n🎉 Success! Your project '$projectName' is fully initialized at $projectPath." -ForegroundColor Cyan
+
+Write-Host "`n================================================================================" -ForegroundColor Cyan
+Write-Host "🚀 HOW TO RUN YOUR PROJECT IN VS CODE" -ForegroundColor Yellow
+Write-Host "================================================================================`n" -ForegroundColor Cyan
+
+Write-Host "1. Open VS Code and open your '$projectName' folder.`n" -ForegroundColor White
+Write-Host "2. Open the integrated terminal and split it into two panes.`n" -ForegroundColor White
+
+Write-Host "TERMINAL 1: Run the Django Backend" -ForegroundColor Green
+Write-Host "----------------------------------" -ForegroundColor Green
+Write-Host "cd backend"
+Write-Host ".\venv\Scripts\Activate.ps1"
+Write-Host "python manage.py runserver"
+
+Write-Host "TERMINAL 2: Run the Next.js Frontend" -ForegroundColor Blue
+Write-Host "------------------------------------" -ForegroundColor Blue
+Write-Host "cd frontend"
+Write-Host "npm run dev"
