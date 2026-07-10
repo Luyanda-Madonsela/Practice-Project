@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import NextLink from "next/link";
 import { 
   Button, 
   HStack, 
@@ -45,10 +46,12 @@ export default function Navigation() {
             {/*------------------------------------ Navigation Bar-------------------------------------- */}
             <HStack as="nav" spacing={4} h="4.5rem" w="full" bg="white" border="md" borderWidth="1px" borderColor="red.500" color="black" justifyContent="center" alignItems="center" position="fixed" top={0} left={0} right={0} zIndex={999}>
                 <HStack as="div" w="90%">
+                    <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
                     <HStack borderWidth="1px" borderColor="red.500" h="100%">
                         <Text borderWidth="1px" borderColor="red.500" fontSize="lg" fontWeight="bold"> Logo </Text>
                         <Text fontSize="lg" fontWeight="bold"> Practice Project </Text>
                     </HStack>
+                    </Link>
                     <Spacer />
                     <Button colorScheme="blue" variant="ghost">Dashboard</Button>
                     
