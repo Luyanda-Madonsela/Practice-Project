@@ -4,7 +4,7 @@ import { Box, Button, Flex, Grid, Heading, Text, VStack } from "@chakra-ui/react
 
 export default function Home() {
   return (
-    <VStack as="main" borderWidth="1px" borderColor="red.500" w="maxW" minH="70vh" alignItems="center" justifyContent="center" bg="gray.50">
+    <VStack as="main" borderWidth="1px" borderColor="red.500" w="maxW" minH="80vh" alignItems="center" justifyContent="center" bg="gray.50">
       
       <Heading>What do you want to work on today?</Heading>
       
