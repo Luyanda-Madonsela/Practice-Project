@@ -43,7 +43,7 @@ export default function Navigation() {
 
     return (
         <>
-            {/*------------------------------------ Navigation Bar-------------------------------------- */}
+            {/*------------------------------------ NAVIGATION BAR-------------------------------------- */}
             <HStack as="nav" spacing={4} h="4.5rem" w="full" bg="white" border="md" borderWidth="1px" borderColor="red.500" color="black" justifyContent="center" alignItems="center" position="fixed" top={0} left={0} right={0} zIndex={999}>
                 <HStack as="div" w="90%">
                     <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
@@ -63,7 +63,7 @@ export default function Navigation() {
                     </Button>
                 </HStack>
             </HStack>
-            {/*-------------------------------------------------------------------------------------------- */}
+            {/*-----------------------------------------MODALS-------------------------------------- */}
             <Modal isOpen={isOpen} onClose={onClose} size="md" isCentered>
                 <ModalOverlay />
                 <ModalContent pb={4}>
@@ -114,7 +114,7 @@ export default function Navigation() {
 
                                 <Center>
                                     <Text fontSize="sm" color="gray.600">
-                                        Don't have an account?{' '}
+                                        Don&apos;t have an account?{' '}
                                         <Link color="blue.500" fontWeight="semibold" onClick={() => handleOpenModal('Sign Up')}>
                                             Sign up
                                         </Link>
