@@ -4,7 +4,7 @@ import { Badge, Box, Button, Heading, Spacer, Text } from "@chakra-ui/react";
 export default function ImagesPractice() {
   return (
     <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="3.75rem" alignItems="center">  
+      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="8.5rem" alignItems="center">  
         <Heading fontSize="4xl" fontWeight="bold">Images Practice</Heading>  
       </HStack>
       {/*------------------------------------------SEARCH & FILTER---------------------------------------- */}
