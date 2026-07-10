@@ -14,9 +14,9 @@ export default function Home() {
         <Button as="a" href="/textpractice" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Text Practice </Button>
         <Button as="a" href="/datetimepractice" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Date & Time Practice</Button>
         <Button as="a" href="/videodisplaypractice" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Video Display Practice</Button>
-        <Button as="a" href="/documentspractice" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Handling Documents Practice</Button>
-        <Button as="a" href="/interactivemap" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Interactive Map Practice</Button>
-        <Button as="a" href="/darklightmode" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Dark/ Light Mode Practice</Button>
+        <Button as="a" href="/documentspractice" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Documents Practice</Button>
+        <Button as="a" href="/admindashboard" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">Admin Dashboard</Button>
+        <Button as="a" href="/userdashboard" w="14rem" h="3.5rem" colorScheme="blue" variant="solid" size="lg">User Dashboard</Button>
       </Grid>
 
     </VStack>
