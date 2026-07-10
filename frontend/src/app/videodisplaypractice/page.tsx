@@ -4,7 +4,7 @@ import { Box, Button, Heading, Spacer, Text } from "@chakra-ui/react";
 export default function VideoDisplayPractice() {
   return (
     <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="3.75rem" mb="3rem" alignItems="center">  
+      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="8.5rem" mb="3rem" alignItems="center">  
         <Heading fontSize="4xl" fontWeight="bold">Video Display Practice</Heading>  
       </HStack>
       {/*------------------------------------------VIDEO PLAYER---------------------------------------- */}
