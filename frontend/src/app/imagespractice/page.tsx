@@ -4,11 +4,11 @@ import { Badge, Box, Button, Heading, Spacer, Text } from "@chakra-ui/react";
 export default function ImagesPractice() {
   return (
     <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="95%" mt="3.75rem" alignItems="center">  
+      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="3.75rem" alignItems="center">  
         <Heading fontSize="4xl" fontWeight="bold">Images Practice</Heading>  
       </HStack>
       {/*------------------------------------------SEARCH & FILTER---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Search Bar + Filters</Text>
           <Spacer/>
@@ -19,7 +19,7 @@ export default function ImagesPractice() {
         </HStack>
       </VStack>
       {/*------------------------------------------IMAGES---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="35rem" mt="1.5rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="35rem" mt="1.5rem" alignItems="center" justifyContent="center">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Image Card Grid</Text>
           <Spacer/>
@@ -31,7 +31,7 @@ export default function ImagesPractice() {
         </Box>
       </VStack>
       {/*------------------------------------------PAGENATION---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Pagenation</Text>
           <Spacer/>
@@ -41,7 +41,8 @@ export default function ImagesPractice() {
         </Box>
       </VStack>
       {/*------------------------------------------BACKGROUND IMAGES---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="35rem" mt="1.5rem" mb="11rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="35rem" mt="1.5rem" mb="11rem" alignItems="center" justifyContent="center">
+
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Background Image</Text>
           <Spacer/>
