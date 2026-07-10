@@ -4,11 +4,11 @@ import { Text, Heading, Button, Spacer, Box } from "@chakra-ui/react";
 export default function ChakraUIComponents() {
   return (
     <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="95%" mt="3.75rem" alignItems="center">  
+      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="3.75rem" alignItems="center">  
         <Heading fontSize="4xl" fontWeight="bold">Chakra UI Components Practice</Heading>  
       </HStack>
       {/*------------------------------------------ALERTS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Alerts</Text>
           <Spacer/>
@@ -18,9 +18,8 @@ export default function ChakraUIComponents() {
           <Text>Alert Component</Text>
         </Box>
       </VStack>
-      
       {/*------------------------------------------ACCORDION---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="16.20rem" mt="1.5rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="16.20rem" mt="1.5rem" alignItems="center" justifyContent="center">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Accordion</Text>
           <Spacer/>
@@ -30,9 +29,8 @@ export default function ChakraUIComponents() {
           <Text>Accordion Component</Text>
         </Box>
       </VStack>
-
       {/*------------------------------------------BUTTONS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="8rem" mt="1.5rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="8rem" mt="1.5rem" alignItems="center" justifyContent="center">
           <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Buttons</Text>
           <Spacer/>
@@ -42,9 +40,8 @@ export default function ChakraUIComponents() {
           <Text>Button Components</Text>
         </Box>
       </VStack>
-
       {/*------------------------------------------DIVIDER---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="16.70rem" mt="1.5rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="16.70rem" mt="1.5rem" alignItems="center" justifyContent="center">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Divider</Text>
           <Spacer/>
@@ -54,9 +51,8 @@ export default function ChakraUIComponents() {
           <Text>Divider Component</Text>
         </Box>
       </VStack>
-
       {/*------------------------------------------MODAL---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="15.90rem" mt="1.5rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="15.90rem" mt="1.5rem" alignItems="center" justifyContent="center">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Modal</Text>
           <Spacer/>
@@ -66,9 +62,8 @@ export default function ChakraUIComponents() {
           <Text>Modal Component</Text>
         </Box>
       </VStack>
-
       {/*------------------------------------------TABS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="95%" h="13.80rem" mb="7rem" mt="1.5rem" alignItems="center" justifyContent="center">
+      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="13.80rem" mb="7rem" mt="1.5rem" alignItems="center" justifyContent="center">
         <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
           <Text>Tabs</Text>
           <Spacer/>
@@ -78,7 +73,6 @@ export default function ChakraUIComponents() {
           <Text>Tabs Component</Text>
         </Box>
       </VStack>
-
     </VStack>
   )
 }
