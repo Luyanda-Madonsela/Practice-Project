@@ -4,7 +4,7 @@ import { Text, Heading, Button, Spacer, Box } from "@chakra-ui/react";
 export default function ChakraUIComponents() {
   return (
     <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="3.75rem" alignItems="center">  
+      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="8.5rem" alignItems="center">  
         <Heading fontSize="4xl" fontWeight="bold">Chakra UI Components Practice</Heading>  
       </HStack>
       {/*------------------------------------------ALERTS---------------------------------------- */}
