@@ -3,14 +3,30 @@ import { Text, Heading, Spacer, Button, Box } from "@chakra-ui/react";
 
 export default function TextPractice() {
   return (
-    <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="8.5rem" alignItems="center">  
-        <Heading fontSize="4xl" fontWeight="bold">Text Practice</Heading>  
+    <VStack minH="90vh" bgColor="#FFFAF5">
+      <HStack w="90%" mt="8.5rem" alignItems="center">  
+        <Heading 
+          fontFamily="Inter, sans-serif"
+          fontWeight="700"
+          fontSize="1.75rem"
+          lineHeight="100%"
+          letterSpacing="0%"
+          color="#14141F">
+            Text Practice
+        </Heading>  
       </HStack>
       {/*------------------------------------------FONT SELECTOR---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="13rem" mt="3rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Font Selector</Text>
+      <VStack bgColor="#EDEDF7" borderRadius="0.75rem" borderColor="#CCCCDE" borderWidth="1px" w="90%" h="13rem" mt="3rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+            fontFamily="Geist, sans-serif"
+            fontWeight="700"
+            fontSize="0.9rem"
+            lineHeight="100%"
+            letterSpacing="0%"
+            color="#0F172A">
+              Font Selector
+          </Text>
           <Spacer/>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="25%" >
@@ -21,9 +37,17 @@ export default function TextPractice() {
         </Box>
       </VStack>
       {/*------------------------------------------HEADERS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="18rem" mt="3rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Headers(H1-H6)</Text>
+      <VStack bgColor="#EDEDF7" borderRadius="0.75rem" borderColor="#CCCCDE" borderWidth="1px" w="90%" h="18rem" mt="3rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+            fontFamily="Geist, sans-serif"
+            fontWeight="700"
+            fontSize="0.9rem"
+            lineHeight="100%"
+            letterSpacing="0%"
+            color="#0F172A">
+              Headers(H1-H6)
+          </Text>
           <Spacer/>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="80%" >
@@ -31,9 +55,17 @@ export default function TextPractice() {
         </Box>
       </VStack>
       {/*------------------------------------------TEXT AREA---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="13rem" mt="3rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Text Area</Text>
+      <VStack bgColor="#EDEDF7" borderRadius="0.75rem" borderColor="#CCCCDE" borderWidth="1px" w="90%" h="13rem" mt="3rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+            fontFamily="Geist, sans-serif"
+            fontWeight="700"
+            fontSize="0.9rem"
+            lineHeight="100%"
+            letterSpacing="0%"
+            color="#0F172A">
+              Text Area
+          </Text>
           <Spacer/>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="60%" >
@@ -44,9 +76,17 @@ export default function TextPractice() {
         </Box>
       </VStack>
       {/*------------------------------------------TEXT FORMATTING---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="13rem" mt="3rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Text Formatting</Text>
+      <VStack bgColor="#EDEDF7" borderRadius="0.75rem" borderColor="#CCCCDE" borderWidth="1px" w="90%" h="13rem" mt="3rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+            fontFamily="Geist, sans-serif"
+            fontWeight="700"
+            fontSize="0.9rem"
+            lineHeight="100%"
+            letterSpacing="0%"
+            color="#0F172A">
+              Text Formatting
+          </Text>
           <Spacer/>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="20%" >
@@ -57,9 +97,17 @@ export default function TextPractice() {
         </Box>
       </VStack>
       {/*------------------------------------------LISTS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="15rem" mt="3rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Lists (Ordered & Unordered)</Text>
+      <VStack bgColor="#EDEDF7" borderRadius="0.75rem" borderColor="#CCCCDE" borderWidth="1px" w="90%" h="15rem" mt="3rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+            fontFamily="Geist, sans-serif"
+            fontWeight="700"
+            fontSize="0.9rem"
+            lineHeight="100%"
+            letterSpacing="0%"
+            color="#0F172A">
+              Lists (Ordered & Unordered)
+          </Text>
           <Spacer/>
         </HStack>
         <HStack borderWidth="1px" borderColor="red.500" w="98%" h="70%" >
@@ -72,9 +120,17 @@ export default function TextPractice() {
         </HStack>
       </VStack>
       {/*------------------------------------------DIVIDERS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="10rem" mt="3rem" mb="9rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Dividers</Text>
+      <VStack bgColor="#EDEDF7" borderRadius="0.75rem" borderColor="#CCCCDE" borderWidth="1px" w="90%" h="10rem" mt="3rem" mb="9rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+            fontFamily="Geist, sans-serif"
+            fontWeight="700"
+            fontSize="0.9rem"
+            lineHeight="100%"
+            letterSpacing="0%"
+            color="#0F172A">
+              Dividers
+          </Text>
           <Spacer/>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="80%" >
