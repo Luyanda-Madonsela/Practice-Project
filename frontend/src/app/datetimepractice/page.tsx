@@ -57,7 +57,7 @@ export default function DateTimePractice() {
           </Text>
           <Spacer/>
         </HStack>
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" h="70%" >
+        <HStack w="98%" h="70%" >
           <VStack borderWidth="1px" borderColor="red.500" w="25%" h="100%">
             <Text>Pretoria</Text>
           </VStack>
