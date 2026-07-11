@@ -110,7 +110,7 @@ export default function TextPractice() {
           </Text>
           <Spacer/>
         </HStack>
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" h="70%" >
+        <HStack w="98%" h="70%" >
           <VStack borderWidth="1px" borderColor="red.500" w="50%" h="100%">
             <Text>Ordered List</Text>
           </VStack>
