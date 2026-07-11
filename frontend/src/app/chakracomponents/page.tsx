@@ -131,27 +131,54 @@ function NavTabs() {
 export default function ChakraUIComponents() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   
-  // 2. Strongly type your hook state
+
   const [activeComponent, setActiveComponent] = useState<ComponentData>(componentCode.Alerts);
 
-  // 3. Strongly type the argument signature 
+
   const handleOpenCode = (componentKey: ComponentKeys): void => {
     setActiveComponent(componentCode[componentKey]);
     onOpen();
   };
 
   return (
-    <VStack minH="90vh">
-      <HStack borderWidth="1px" borderColor="red.500" w="90%" mt="8.5rem" alignItems="center">  
-        <Heading fontSize="4xl" fontWeight="bold">Chakra UI Components Practice</Heading>  
+    <VStack minH="90vh" bgColor="#FAFAFF">
+      <HStack w="90%" mt="8.5rem" alignItems="center">  
+        <Heading  fontFamily="Inter, sans-serif"
+          fontWeight="700"
+          fontSize="1.75rem"
+          lineHeight="100%"
+          letterSpacing="0%"
+          color="#14141F">
+            Chakra UI Components Practice
+        </Heading>  
       </HStack>
 
       {/*------------------------------------------ALERTS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Alerts</Text>
+      <VStack bgColor="white" borderRadius="0.75rem" borderColor="#E2E8F0" borderWidth="1px" w="90%" h="10rem" mt="3rem" alignItems="center" justifyContent="start">
+        <HStack w="98%" mt="1rem"> 
+          <Text 
+              fontFamily="Geist, sans-serif"
+              fontWeight="700"
+              fontSize="0.9rem"
+              lineHeight="100%"
+              letterSpacing="0%"
+              color="#0F172A">
+              Alerts
+          </Text>
           <Spacer/>
-          <Button onClick={() => handleOpenCode("Alerts")}>View Code</Button>
+          <Button 
+              w="6.375rem" 
+              h="1.75rem" 
+              borderRadius="65rem" 
+              color="#475569" 
+              borderColor="#F1F5F9" 
+              borderWidth="0.0625rem"  
+              fontFamily="Geist, sans-serif"
+              fontWeight="600"
+              fontSize="0.75rem"
+              onClick={() => handleOpenCode("Alerts")}>
+              View Code
+          </Button>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="50%">
           <Text>Alert Component</Text>
@@ -159,11 +186,31 @@ export default function ChakraUIComponents() {
       </VStack>
 
       {/*------------------------------------------ACCORDION---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="16.20rem" mt="1.5rem" alignItems="center" justifyContent="center">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Accordion</Text>
+      <VStack bgColor="white" borderRadius="0.75rem" borderColor="#E2E8F0" borderWidth="1px" w="90%" h="16.20rem"  mt="1.5rem" alignItems="center" justifyContent="center">
+        <HStack w="98%" mt="0rem"> 
+          <Text
+              fontFamily="Geist, sans-serif"
+              fontWeight="700"
+              fontSize="0.9rem"
+              lineHeight="100%"
+              letterSpacing="0%"
+              color="#0F172A">
+              Accordion
+          </Text>
           <Spacer/>
-          <Button onClick={() => handleOpenCode("Accordion")}>View Code</Button>
+          <Button 
+              w="6.375rem" 
+              h="1.75rem" 
+              borderRadius="65rem" 
+              color="#475569" 
+              borderColor="#F1F5F9" 
+              borderWidth="0.0625rem"  
+              fontFamily="Geist, sans-serif"
+              fontWeight="600"
+              fontSize="0.75rem"
+              onClick={() => handleOpenCode("Accordion")}>
+              View Code
+            </Button>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="70%">
           <Text>Accordion Component</Text>
@@ -171,11 +218,31 @@ export default function ChakraUIComponents() {
       </VStack>
 
       {/*------------------------------------------BUTTONS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="8rem" mt="1.5rem" alignItems="center" justifyContent="center">
-          <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Buttons</Text>
+      <VStack bgColor="white" borderRadius="0.75rem" borderColor="#E2E8F0" borderWidth="1px" w="90%" h="8rem" mt="1.5rem" alignItems="center" justifyContent="center">
+          <HStack w="98%" mt="1rem"> 
+          <Text
+              fontFamily="Geist, sans-serif"
+              fontWeight="700"
+              fontSize="0.9rem"
+              lineHeight="100%"
+              letterSpacing="0%"
+              color="#0F172A">
+                Buttons
+            </Text>
           <Spacer/>
-          <Button onClick={() => handleOpenCode("Buttons")}>View Code</Button>
+          <Button 
+              w="6.375rem" 
+              h="1.75rem" 
+              borderRadius="65rem" 
+              color="#475569" 
+              borderColor="#F1F5F9" 
+              borderWidth="0.0625rem"  
+              fontFamily="Geist, sans-serif"
+              fontWeight="600"
+              fontSize="0.75rem"
+              onClick={() => handleOpenCode("Buttons")}>
+                View Code
+            </Button>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="50%">
           <Text>Button Components</Text>
@@ -183,11 +250,31 @@ export default function ChakraUIComponents() {
       </VStack>
 
       {/*------------------------------------------DIVIDER---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="16.70rem" mt="1.5rem" alignItems="center" justifyContent="center">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Divider</Text>
+      <VStack bgColor="white" borderRadius="0.75rem" borderColor="#E2E8F0" borderWidth="1px" w="90%" h="16.70rem" mt="1.5rem" alignItems="center" justifyContent="center">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+              fontFamily="Geist, sans-serif"
+              fontWeight="700"
+              fontSize="0.9rem"
+              lineHeight="100%"
+              letterSpacing="0%"
+              color="#0F172A">
+                Divider
+            </Text>
           <Spacer/>
-          <Button onClick={() => handleOpenCode("Divider")}>View Code</Button>
+          <Button
+              w="6.375rem" 
+              h="1.75rem" 
+              borderRadius="65rem" 
+              color="#475569" 
+              borderColor="#F1F5F9" 
+              borderWidth="0.0625rem"  
+              fontFamily="Geist, sans-serif"
+              fontWeight="600"
+              fontSize="0.75rem"
+              onClick={() => handleOpenCode("Divider")}>
+                View Code
+            </Button>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="70%">
           <Text>Divider Component</Text>
@@ -195,11 +282,31 @@ export default function ChakraUIComponents() {
       </VStack>
 
       {/*------------------------------------------MODAL---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="15.90rem" mt="1.5rem" alignItems="center" justifyContent="center">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Modal</Text>
+      <VStack bgColor="white" borderRadius="0.75rem" borderColor="#E2E8F0" borderWidth="1px" w="90%" h="15.90rem" mt="1.5rem" alignItems="center" justifyContent="center">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+              fontFamily="Geist, sans-serif"
+              fontWeight="700"
+              fontSize="0.9rem"
+              lineHeight="100%"
+              letterSpacing="0%"
+              color="#0F172A">
+                Modal
+            </Text>
           <Spacer/>
-          <Button onClick={() => handleOpenCode("Modal")}>View Code</Button>
+          <Button
+              w="6.375rem" 
+              h="1.75rem" 
+              borderRadius="65rem" 
+              color="#475569" 
+              borderColor="#F1F5F9" 
+              borderWidth="0.0625rem"  
+              fontFamily="Geist, sans-serif"
+              fontWeight="600"
+              fontSize="0.75rem"
+              onClick={() => handleOpenCode("Modal")}>
+                View Code
+            </Button>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="70%">
           <Text>Modal Component</Text>
@@ -207,24 +314,44 @@ export default function ChakraUIComponents() {
       </VStack>
 
       {/*------------------------------------------TABS---------------------------------------- */}
-      <VStack borderWidth="1px" borderColor="red.500" w="90%" h="13.80rem" mb="7rem" mt="1.5rem" alignItems="center" justifyContent="center">
-        <HStack borderWidth="1px" borderColor="red.500" w="98%" mt="2rem"> 
-          <Text>Tabs</Text>
+      <VStack bgColor="white" borderRadius="0.75rem" borderColor="#E2E8F0" borderWidth="1px" w="90%" h="13.80rem" mb="7rem" mt="1.5rem" alignItems="center" justifyContent="center">
+        <HStack w="98%" mt="1rem"> 
+          <Text
+              fontFamily="Geist, sans-serif"
+              fontWeight="700"
+              fontSize="0.9rem"
+              lineHeight="100%"
+              letterSpacing="0%"
+              color="#0F172A">
+                Tabs
+            </Text>
           <Spacer/>
-          <Button onClick={() => handleOpenCode("Tabs")}>View Code</Button>
+          <Button
+              w="6.375rem" 
+              h="1.75rem" 
+              borderRadius="65rem" 
+              color="#475569" 
+              borderColor="#F1F5F9" 
+              borderWidth="0.0625rem"  
+              fontFamily="Geist, sans-serif"
+              fontWeight="600"
+              fontSize="0.75rem"          
+              onClick={() => handleOpenCode("Tabs")}>
+                View Code
+            </Button>
         </HStack>
         <Box borderWidth="1px" borderColor="red.500" w="98%" h="70%">
           <Text>Tabs Component</Text>
         </Box>
       </VStack>
 
-      {/* Reusable Code Modal Component */}
+
       <CodeModal isOpen={isOpen} onClose={onClose} data={activeComponent} />
     </VStack>
   );
 }
 
-// 4. Define specific types for the sub-component props
+
 interface CodeModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -266,7 +393,7 @@ function CodeModal({ isOpen, onClose, data }: CodeModalProps) {
             variant="outline" 
             borderRadius="full" 
             size="md"
-            leftIcon={<Text fontWeight="bold">{`< >`}</Text>}
+            leftIcon={<Text fontWeight="bold"></Text>}
             bg="gray.50"
           >
             {hasCopied ? "Copied!" : "Copy All"}
