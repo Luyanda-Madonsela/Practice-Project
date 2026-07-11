@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState } from 'react';
+import { Box } from '@chakra-ui/react';
 import NextLink from "next/link";
+import Image from "next/image";
+import Logo from "../../public/zap.svg";
 import { 
   Button, 
   HStack, 
@@ -44,14 +47,18 @@ export default function Navigation() {
     return (
         <>
             {/*------------------------------------ Navigation Bar-------------------------------------- */}
-            <HStack as="nav" spacing={4} h="4.5rem" w="full" bg="white" border="md" borderWidth="1px" borderColor="red.500" color="black" justifyContent="center" alignItems="center" position="fixed" top={0} left={0} right={0} zIndex={999}>
-                <HStack as="div" w="90%">
+            <HStack as="nav" spacing={4} h="4.5rem" w="full" bg="white" border="md"  color="black" justifyContent="center" alignItems="center" position="fixed" top={0} left={0} right={0} zIndex={999}>
+                <HStack as="div" w="90%" h="100%">
+                    {/*----------------------------LOGO-------------------------------- */}
                     <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
-                    <HStack borderWidth="1px" borderColor="red.500" h="100%">
-                        <Text borderWidth="1px" borderColor="red.500" fontSize="lg" fontWeight="bold"> Logo </Text>
-                        <Text fontSize="lg" fontWeight="bold"> Practice Project </Text>
-                    </HStack>
+                        <HStack w="20rem" h="3rem">
+                            <Box w="10%" h="2rem" display="flex" alignItems="center" justifyContent="center" bgColor="blue.500">
+                                <Image src={Logo} alt="logo" width={20} height={20} />
+                            </Box>
+                            <Text fontSize="lg" fontWeight="bold"> Practice Project </Text>
+                        </HStack>
                     </Link>
+                    {/*---------------------------------------------------------------- */}
                     <Spacer />
                     <Button colorScheme="blue" variant="ghost">Dashboard</Button>
                     
@@ -114,7 +121,7 @@ export default function Navigation() {
 
                                 <Center>
                                     <Text fontSize="sm" color="gray.600">
-                                        Don't have an account?{' '}
+                                        Don&apos;t have an account?{' '}
                                         <Link color="blue.500" fontWeight="semibold" onClick={() => handleOpenModal('Sign Up')}>
                                             Sign up
                                         </Link>
