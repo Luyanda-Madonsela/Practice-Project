@@ -47,30 +47,34 @@ export default function Navigation() {
     return (
         <>
             {/*------------------------------------ Navigation Bar-------------------------------------- */}
-            <HStack as="nav" spacing={4} h="4.5rem" w="full" bg="white" border="md"  color="black" justifyContent="center" alignItems="center" position="fixed" top={0} left={0} right={0} zIndex={999}>
+            <HStack as="nav" spacing={4} h="4.5rem" w="full" bg="white" border="md"  color="black" justifyContent="center" alignItems="center" position="fixed" top={0} left={0} right={0} zIndex={999} boxShadow="0px 4px 15px #2563EB14">
                 <HStack as="div" w="90%" h="100%">
                     {/*----------------------------LOGO-------------------------------- */}
                     <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
                         <HStack w="20rem" h="3rem">
-                            <Box w="10%" h="2rem" display="flex" alignItems="center" justifyContent="center" bgColor="blue.500">
+                            <Box w="10%" h="2rem" display="flex" alignItems="center" justifyContent="center" borderRadius="0.375rem" bgColor="#2563EB">
                                 <Image src={Logo} alt="logo" width={20} height={20} />
                             </Box>
                             <Text fontSize="lg" fontWeight="bold"> Practice Project </Text>
                         </HStack>
                     </Link>
-                    {/*---------------------------------------------------------------- */}
                     <Spacer />
-                    <Button colorScheme="blue" variant="ghost">Dashboard</Button>
-                    
-                    <Button colorScheme="blue" variant="ghost" onClick={() => handleOpenModal('Login')}>
+                    {/*----------------------------NAV BUTTONS---------------------------- */}
+                    <Button variant="ghost" color="gray.800">
+                        Dashboard
+                    </Button>
+
+                    <Button variant="outline" borderColor="gray.200" color="gray.800" onClick={() => handleOpenModal('Login')}>
                         Login
                     </Button>
-                    <Button colorScheme="blue" variant="ghost" onClick={() => handleOpenModal('Sign Up')}>
+
+                    <Button ml="0.7rem" bgColor="#2563EB" color="white"  _hover={{ bgColor: "#1D4ED8" }} onClick={() => handleOpenModal('Sign Up')}>
                         Sign Up
                     </Button>
+                    {/*------------------------------------------------------------------ */}
                 </HStack>
             </HStack>
-            {/*-------------------------------------------------------------------------------------------- */}
+            {/*----------------------------MODAL----------------------------------------- */}
             <Modal isOpen={isOpen} onClose={onClose} size="md" isCentered>
                 <ModalOverlay />
                 <ModalContent pb={4}>
