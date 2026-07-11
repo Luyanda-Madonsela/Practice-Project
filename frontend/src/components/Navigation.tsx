@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Box } from '@chakra-ui/react';
 import NextLink from "next/link";
 import Image from "next/image";
-import Logo from "../../public/zap.svg";
 import { 
   Button, 
   HStack, 
@@ -53,7 +52,7 @@ export default function Navigation() {
                     <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
                         <HStack w="25rem" h="3rem">
                             <Box w="10%" h="2rem" display="flex" alignItems="center" justifyContent="center" borderRadius="0.375rem" bgColor="#2563EB">
-                                <Image src={Logo} alt="logo" width={20} height={20} />
+                                <Image src="/zap.svg" alt="logo" width={20} height={20} />
                             </Box>
                             <Text fontSize="lg" fontWeight="bold"> Practice Project </Text>
                         </HStack>

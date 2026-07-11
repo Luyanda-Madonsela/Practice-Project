@@ -1,10 +1,6 @@
 import React from 'react'
 import { Box, HStack, Spacer, VStack, Text, Divider } from '@chakra-ui/react'
 import Image from 'next/image'
-import Logo from "../../public/zap.svg";
-import Twitter from "../../public/twitter.svg";
-import LinkdIn from "../../public/linkedin.svg";
-import GitHub from "../../public/github.svg";
 
 export default function Footer() {
   return (
@@ -15,7 +11,7 @@ export default function Footer() {
                     <Box w="20rem" h="5rem">
                         <HStack w="20rem" h="3rem">
                             <Box w="8%" h="1.5rem" display="flex" alignItems="center" justifyContent="center" borderRadius="0.375rem" bgColor="#2563EB">
-                                <Image src={Logo} alt="logo" width={15} height={20} />
+                                <Image src="/zap.svg" alt="logo" width={15} height={20} />
                             </Box>
                             <Text fontSize="lg" fontWeight="bold"> Practice Project </Text>
                         </HStack>
@@ -26,9 +22,9 @@ export default function Footer() {
                     </Text>
                     {/*---------------------------SOCIAL MEDIA----------------------- */}
                     <HStack w="20rem" h="2rem" spacing="1rem">
-                        <Image src={Twitter} alt="twitter" width={20} height={20} />
-                        <Image src={LinkdIn} alt="linkedin" width={20} height={20} />
-                        <Image src={GitHub} alt="github" width={20} height={20} />
+                        <Image src="/twitter.svg" alt="twitter" width={20} height={20} />
+                        <Image src="/linkedin.svg" alt="linkedin" width={20} height={20} />
+                        <Image src="/github.svg" alt="github" width={20} height={20} />
                     </HStack>
                     {/*------------------------------------------------------------- */}
                 </VStack>
