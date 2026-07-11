@@ -51,7 +51,7 @@ export default function Navigation() {
                 <HStack as="div" w="90%">
                     {/*---------------------------LOGO------------------------------- */}
                     <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
-                        <HStack w="20rem" h="3rem">
+                        <HStack w="25rem" h="3rem">
                             <Box w="10%" h="2rem" display="flex" alignItems="center" justifyContent="center" borderRadius="0.375rem" bgColor="#2563EB">
                                 <Image src={Logo} alt="logo" width={20} height={20} />
                             </Box>
@@ -77,7 +77,7 @@ export default function Navigation() {
             {/*-----------------------------------------MODALS-------------------------------------- */}
             <Modal isOpen={isOpen} onClose={onClose} size="md" isCentered>
                 <ModalOverlay />
-                <ModalContent pb={4}>
+                <ModalContent pb={4} pt="1rem" borderRadius="1rem" w="25rem">
                     <ModalHeader fontSize="2xl" fontWeight="bold">
                         {modalType === 'Login' ? 'Welcome Back' : 'Create Account'}
                     </ModalHeader>
