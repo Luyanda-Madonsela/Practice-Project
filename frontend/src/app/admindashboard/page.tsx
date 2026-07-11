@@ -61,7 +61,9 @@ export default function AdminDashboard() {
             letterSpacing="0%"
             color="#0F172A"
             ml="1rem"
-          >Admin Overview</Text>
+          >
+            Admin Overview
+          </Text>
         </HStack>
       {/* --------------------------------BODY-----------------------------------*/}
         <HStack borderWidth="1px" borderColor="red.500" w="100%" h="13rem" mt="7rem">
